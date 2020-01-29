@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Paper VIT</title>
+  </head>
+  <body>
+    <form
+      action="http://localhost:50/papers/upload/"
+      enctype="multipart/form-data"
+      method="POST"
+    >
+      Select pdf only: <input type="file" name="paper" /><br />
+      Slot : <input type="text" name="slot" /><br />
+      exam : <input type="text" name="exam" /><br />
+      year : <input type="text" name="year" /><br />
+      filename : <input type="text" name="filename" /> <br />
+      <br />
+      <input type="submit" value="Upload your files" />
+    </form>
+  </body>
+</html>
