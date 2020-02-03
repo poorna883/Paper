@@ -7,7 +7,7 @@ var papers_1 = require("./papers");
 // import * as multer from multer;
 var bodyParser = require("body-parser");
 var multer = require("multer");
-var PORT = 50;
+var PORT = process.env.PORT || 50;
 var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");

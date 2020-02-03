@@ -5,7 +5,7 @@ import papers from "./papers";
 // import * as multer from multer;
 const bodyParser = require("body-parser");
 const multer = require("multer");
-const PORT = 50;
+const PORT = process.env.PORT || 50;
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
