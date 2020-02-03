@@ -89,7 +89,7 @@ function upload(file, body, type) {
         return __generator(this, function (_a) {
             encodedPdf = base64.base64Encode(file.path);
             MongoClient = require("mongodb").MongoClient;
-            myurl = "mongodb+srv://vpc123:vpc123@cluster0-exwwr.mongodb.net/test?retryWrites=true&w=majority";
+            myurl = "mongodb+srv://tushar1210:idbi1234@papervit-jcbvb.mongodb.net/test?retryWrites=true&w=majority";
             MongoClient.connect(myurl, { useNewUrlParser: true }, function (err, client) {
                 if (err)
                     return console.log(err);
@@ -126,7 +126,7 @@ function uploadSubject(body) {
         var MongoClient, myurl;
         return __generator(this, function (_a) {
             MongoClient = require("mongodb").MongoClient;
-            myurl = "mongodb+srv://vpc123:vpc123@cluster0-exwwr.mongodb.net/test?retryWrites=true&w=majority";
+            myurl = "mongodb+srv://tushar1210:idbi1234@papervit-jcbvb.mongodb.net/test?retryWrites=true&w=majority";
             MongoClient.connect(myurl, { useNewUrlParser: true }, function (err, client) {
                 if (err)
                     return console.log(err);
@@ -184,7 +184,7 @@ function getData(id) {
                 case 0:
                     idd = app_1["default"].mongo.ObjectId.createFromHexString(id);
                     MongoClient = require("mongodb").MongoClient;
-                    myurl = "mongodb+srv://vpc123:vpc123@cluster0-exwwr.mongodb.net/test?retryWrites=true&w=majority";
+                    myurl = "mongodb+srv://tushar1210:idbi1234@papervit-jcbvb.mongodb.net/test?retryWrites=true&w=majority";
                     return [4 /*yield*/, MongoClient.connect(myurl, { useNewUrlParser: true }, function (err, client) {
                             if (err)
                                 return console.log(err);

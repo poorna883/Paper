@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 
 mongoose.connect(
-  "mongodb+srv://vpc123:vpc123@cluster0-exwwr.mongodb.net/test?retryWrites=true&w=majority",
+  "mongodb+srv://tushar1210:idbi1234@papervit-jcbvb.mongodb.net/test?retryWrites=true&w=majority",
   { useNewUrlParser: true, useUnifiedTopology: true },
   () => {
     console.log("connected to atlas");

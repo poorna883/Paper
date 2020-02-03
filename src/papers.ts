@@ -32,7 +32,7 @@ router.get("/data", async (request, response) => {
 
   const MongoClient = require("mongodb").MongoClient;
   const myurl =
-    "mongodb+srv://vpc123:vpc123@cluster0-exwwr.mongodb.net/test?retryWrites=true&w=majority";
+    "mongodb+srv://tushar1210:idbi1234@papervit-jcbvb.mongodb.net/test?retryWrites=true&w=majority";
   await MongoClient.connect(myurl, { useNewUrlParser: true }, (err, client) => {
     if (err) return console.log(err);
     var db = client.db("test");

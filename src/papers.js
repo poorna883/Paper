@@ -66,7 +66,7 @@ router.get("/data", function (request, response) { return __awaiter(void 0, void
                 id = request.query.id;
                 idd = mongoose.mongo.ObjectId.createFromHexString(id);
                 MongoClient = require("mongodb").MongoClient;
-                myurl = "mongodb+srv://vpc123:vpc123@cluster0-exwwr.mongodb.net/test?retryWrites=true&w=majority";
+                myurl = "mongodb+srv://tushar1210:idbi1234@papervit-jcbvb.mongodb.net/test?retryWrites=true&w=majority";
                 return [4 /*yield*/, MongoClient.connect(myurl, { useNewUrlParser: true }, function (err, client) {
                         if (err)
                             return console.log(err);

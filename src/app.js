@@ -11,7 +11,7 @@ var PORT = 50;
 var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
-mongoose.connect("mongodb+srv://vpc123:vpc123@cluster0-exwwr.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true }, function () {
+mongoose.connect("mongodb+srv://tushar1210:idbi1234@papervit-jcbvb.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true }, function () {
     console.log("connected to atlas");
 });
 mongoose.set("useCreateIndex", true);

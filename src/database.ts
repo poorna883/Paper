@@ -43,7 +43,7 @@ export async function upload(file, body, type) {
   let encodedPdf = base64.base64Encode(file.path);
   const MongoClient = require("mongodb").MongoClient;
   const myurl =
-    "mongodb+srv://vpc123:vpc123@cluster0-exwwr.mongodb.net/test?retryWrites=true&w=majority";
+    "mongodb+srv://tushar1210:idbi1234@papervit-jcbvb.mongodb.net/test?retryWrites=true&w=majority";
 
   MongoClient.connect(myurl, { useNewUrlParser: true }, (err, client) => {
     if (err) return console.log(err);
@@ -73,7 +73,7 @@ export async function upload(file, body, type) {
 export async function uploadSubject(body) {
   const MongoClient = require("mongodb").MongoClient;
   const myurl =
-    "mongodb+srv://vpc123:vpc123@cluster0-exwwr.mongodb.net/test?retryWrites=true&w=majority";
+    "mongodb+srv://tushar1210:idbi1234@papervit-jcbvb.mongodb.net/test?retryWrites=true&w=majority";
 
   MongoClient.connect(myurl, { useNewUrlParser: true }, (err, client) => {
     if (err) return console.log(err);
@@ -109,7 +109,7 @@ export async function getData(id: string) {
   var idd = mongoose.mongo.ObjectId.createFromHexString(id);
   const MongoClient = require("mongodb").MongoClient;
   const myurl =
-    "mongodb+srv://vpc123:vpc123@cluster0-exwwr.mongodb.net/test?retryWrites=true&w=majority";
+    "mongodb+srv://tushar1210:idbi1234@papervit-jcbvb.mongodb.net/test?retryWrites=true&w=majority";
   await MongoClient.connect(myurl, { useNewUrlParser: true }, (err, client) => {
     if (err) return console.log(err);
     var db = client.db("test");
