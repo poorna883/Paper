@@ -180,7 +180,7 @@ router.get("/cat1/:id", function (request, response) { return __awaiter(void 0, 
                     console.log(sub);
                     var arr = [];
                     sub.papers.forEach(function (paper) {
-                        if ((paper.exam = "cat1")) {
+                        if (paper.exam === "cat1") {
                             arr.push(paper);
                         }
                     });
@@ -217,7 +217,7 @@ router.get("/cat2/:id", function (request, response) { return __awaiter(void 0, 
                     console.log(sub);
                     var arr = [];
                     sub.papers.forEach(function (paper) {
-                        if ((paper.exam = "cat2")) {
+                        if (paper.exam === "cat2") {
                             arr.push(paper);
                         }
                     });
@@ -254,7 +254,7 @@ router.get("/fat/:id", function (request, response) { return __awaiter(void 0, v
                     console.log(sub);
                     var arr = [];
                     sub.papers.forEach(function (paper) {
-                        if ((paper.exam = "fat")) {
+                        if (paper.exam === "fat") {
                             arr.push(paper);
                         }
                     });

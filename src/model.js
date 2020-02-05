@@ -2,31 +2,6 @@
 exports.__esModule = true;
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
-var userSchema = new Schema({
-    name: {
-        type: String,
-        required: true,
-        minlength: 1,
-        trim: true
-    },
-    regNo: {
-        type: String,
-        required: true,
-        minlength: 9,
-        trim: true,
-        unique: true
-    },
-    password: {
-        type: String,
-        required: true,
-        minlength: 1,
-        trim: true
-    },
-    favourities: {
-        type: [String],
-        required: false
-    }
-});
 var dataSchema = new Schema({
     _id: String,
     data: String
@@ -61,6 +36,33 @@ var subjectSchema = new Schema({
     ]
 });
 exports.subject = mongoose.model("subjects", subjectSchema);
+var userSchema = new Schema({
+    name: {
+        type: String,
+        required: true,
+        minlength: 1,
+        trim: true
+    },
+    regNo: {
+        type: String,
+        required: true,
+        minlength: 9,
+        trim: true,
+        unique: true
+    },
+    password: {
+        type: String,
+        required: true,
+        minlength: 1,
+        trim: true
+    },
+    favourities: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: "subject"
+        }
+    ]
+});
 exports.data = mongoose.model("data", dataSchema);
 exports.user = mongoose.model("user", userSchema);
 exports["default"] = mongoose;

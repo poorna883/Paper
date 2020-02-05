@@ -2,32 +2,6 @@ import mongoose = require("mongoose");
 
 var Schema = mongoose.Schema;
 
-var userSchema = new Schema({
-  name: {
-    type: String,
-    required: true,
-    minlength: 1,
-    trim: true
-  },
-  regNo: {
-    type: String,
-    required: true,
-    minlength: 9,
-    trim: true,
-    unique: true
-  },
-  password: {
-    type: String,
-    required: true,
-    minlength: 1,
-    trim: true
-  },
-  favourities: {
-    type: [String],
-    required: false
-  }
-});
-
 var dataSchema = new Schema({
   _id: String,
   data: String
@@ -65,6 +39,35 @@ var subjectSchema = new Schema({
   ]
 });
 export var subject = mongoose.model("subjects", subjectSchema);
+
+var userSchema = new Schema({
+  name: {
+    type: String,
+    required: true,
+    minlength: 1,
+    trim: true
+  },
+  regNo: {
+    type: String,
+    required: true,
+    minlength: 9,
+    trim: true,
+    unique: true
+  },
+  password: {
+    type: String,
+    required: true,
+    minlength: 1,
+    trim: true
+  },
+  favourities: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "subject"
+    }
+  ]
+});
+
 export var data = mongoose.model("data", dataSchema);
 export var user = mongoose.model("user", userSchema);
 
