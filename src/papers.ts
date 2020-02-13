@@ -44,9 +44,9 @@ router.get("/data", async (request, response) => {
         });
       } else {
         try {
-          response.contentType("application/pdf");
-          const download = Buffer.from(res.data.toString("utf-8"), "base64");
-          response.send(download);
+          // response.contentType("application/pdf");
+          // const download = Buffer.from(res.data.toString("utf-8"), "base64");
+          response.send(res.data);
         } catch (err) {
           response.json({
             success: false,

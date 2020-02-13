@@ -80,9 +80,9 @@ router.get("/data", function (request, response) { return __awaiter(void 0, void
                             }
                             else {
                                 try {
-                                    response.contentType("application/pdf");
-                                    var download = Buffer.from(res.data.toString("utf-8"), "base64");
-                                    response.send(download);
+                                    // response.contentType("application/pdf");
+                                    // const download = Buffer.from(res.data.toString("utf-8"), "base64");
+                                    response.send(res.data);
                                 }
                                 catch (err) {
                                     response.json({
