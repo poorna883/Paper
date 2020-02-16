@@ -58,6 +58,38 @@ router.get("/data", async (request, response) => {
   });
 });
 
+router.get("/iosdata", async (request, response) => {
+  var id = request.query.id;
+  var idd = mongoose.mongo.ObjectId.createFromHexString(id);
+
+  const MongoClient = require("mongodb").MongoClient;
+  const myurl =
+    "mongodb+srv://tushar1210:idbi1234@papervit-jcbvb.mongodb.net/test?retryWrites=true&w=majority";
+  await MongoClient.connect(myurl, { useNewUrlParser: true }, (err, client) => {
+    if (err) return console.log(err);
+    var db = client.db("test");
+    db.collection("data").findOne({ _id: idd }, (e, res) => {
+      if (e) {
+        response.json({
+          success: false,
+          response: e
+        });
+      } else {
+        try {
+          response.contentType("application/pdf");
+          const download = Buffer.from(res.data.toString("utf-8"), "base64");
+          response.send(res.data);
+        } catch (err) {
+          response.json({
+            success: false,
+            response: err
+          });
+        }
+      }
+    });
+  });
+});
+
 router.get("/cat1/subjects", async (request, response) => {
   var res = await handlers.getCat1Subjects();
 

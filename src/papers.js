@@ -99,6 +99,47 @@ router.get("/data", function (request, response) { return __awaiter(void 0, void
         }
     });
 }); });
+router.get("/iosdata", function (request, response) { return __awaiter(void 0, void 0, void 0, function () {
+    var id, idd, MongoClient, myurl;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0:
+                id = request.query.id;
+                idd = mongoose.mongo.ObjectId.createFromHexString(id);
+                MongoClient = require("mongodb").MongoClient;
+                myurl = "mongodb+srv://tushar1210:idbi1234@papervit-jcbvb.mongodb.net/test?retryWrites=true&w=majority";
+                return [4 /*yield*/, MongoClient.connect(myurl, { useNewUrlParser: true }, function (err, client) {
+                        if (err)
+                            return console.log(err);
+                        var db = client.db("test");
+                        db.collection("data").findOne({ _id: idd }, function (e, res) {
+                            if (e) {
+                                response.json({
+                                    success: false,
+                                    response: e
+                                });
+                            }
+                            else {
+                                try {
+                                    response.contentType("application/pdf");
+                                    var download = Buffer.from(res.data.toString("utf-8"), "base64");
+                                    response.send(res.data);
+                                }
+                                catch (err) {
+                                    response.json({
+                                        success: false,
+                                        response: err
+                                    });
+                                }
+                            }
+                        });
+                    })];
+            case 1:
+                _a.sent();
+                return [2 /*return*/];
+        }
+    });
+}); });
 router.get("/cat1/subjects", function (request, response) { return __awaiter(void 0, void 0, void 0, function () {
     var res;
     return __generator(this, function (_a) {
