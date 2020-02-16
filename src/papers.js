@@ -123,7 +123,7 @@ router.get("/iosdata", function (request, response) { return __awaiter(void 0, v
                                 try {
                                     response.contentType("application/pdf");
                                     var download = Buffer.from(res.data.toString("utf-8"), "base64");
-                                    response.send(res.data);
+                                    response.send(download);
                                 }
                                 catch (err) {
                                     response.json({

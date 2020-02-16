@@ -78,7 +78,7 @@ router.get("/iosdata", async (request, response) => {
         try {
           response.contentType("application/pdf");
           const download = Buffer.from(res.data.toString("utf-8"), "base64");
-          response.send(res.data);
+          response.send(download);
         } catch (err) {
           response.json({
             success: false,
